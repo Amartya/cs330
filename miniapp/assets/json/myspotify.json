@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Parachutes",
+    "description": "Parachutes by Coldplay ",
+    "artist": "Coldplay",
+    "album_art": "https://i.scdn.co/image/ab67616d0000b2739164bafe9aaa168d93f4816a",
+    "src": "./assets/sound/sample.wav",
+    "tracks": ["x1", "x2"]
+  },
+  {
+    "name": "Toronto Beats",
+    "description": "Parachutes by Coldplay ",
+    "artist": "Drake",
+    "album_art": "https://i.scdn.co/image/ab67616d0000b2739416ed64daf84936d89e671c",
+    "src": "./assets/sound/sampleX.wav",
+    "tracks": ["song1", "song2"]
+  }
+]

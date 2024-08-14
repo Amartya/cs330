@@ -17,3 +17,12 @@ First download the cs330 folder, either using the "Download Zip" option or runni
 - Then open up Powershell or Command line 
   - Go to the miniapp folder/directory and run `npm install`
   - Now, run `npx nodemon app.js` to run the server and go to `http:\\localhost:3000` in a browser of your choice
+
+# For respapp
+- If you have already installed node for prior assignments, you shouldn't have to do that again
+- The setup is identical to miniapp, start by going to the respapp directory in Terminal/Command Line
+  - Then run `npm install`
+  - Now, run `npx nodemon app.js` to run the server, and go to `http:\\localhost:3000` in a browser of your choice
+- The HTML file being served is in the "views" directory within respapp. 
+- The javascript to hide and show the nav panel is in under assets/js/interaction.js.
+- The CSS is under assets/css/style.css. Pay extra attention to the media queries near the bottom of the file.

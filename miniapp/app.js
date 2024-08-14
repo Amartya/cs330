@@ -3,7 +3,7 @@
 /*jshint esversion: 8 */
 /*global console*/
 
-const music = require('./assets/json/music.json');
+const music = require('./assets/json/myspotify.json');
 const photos = require('./assets/json/photos.json');
 
 const express = require('express');
@@ -11,6 +11,8 @@ const app = express();
 const port = 3000;
 
 app.use(express.static('./'));
+
+
 app.engine('html', require('ejs').renderFile);
 
 app.get('/', function (req, res) {
@@ -36,4 +38,4 @@ app.get('/music-data', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-})
+});

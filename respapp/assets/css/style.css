@@ -1,0 +1,173 @@
+/*the background gradient is copied from MDN
+ https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient */
+body{
+  font-family: Nunito, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  color: #FFF;
+  background: linear-gradient(#e66465, #9198e5);
+  min-height: 100vh;
+}
+
+/* The nav-wrapper contains the menu-wrapper and the nav panel*/
+.nav-wrapper{
+  width: 100vw;
+  min-height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* menu-wrapper contains the hamburger menu. putting the hamburger menu within a wrapper
+lets us tinker with the target size for the hamburger menu without changing the visual style
+the hamburger menu will only show up at small display sizes, therefore
+*/
+#menu-wrapper{
+  display: none;
+  width: 60px;
+  font-size: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.nav-panel{
+  transition: transform 0.4s ease-in;
+  width: 100%;
+  margin: auto;
+}
+
+.nav-panel ul{
+  display: flex;
+  justify-content: center;
+}
+
+main{
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section{
+  margin: auto;
+}
+
+
+#box-wrapper{
+  width: 85vw;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.box{
+  /*min-width: 150px;*/
+  width: 150px;
+  height: 150px;
+  background-color: #AEAEAE;
+  border: 1px solid #DEDEDE;
+  justify-self: center;
+  /*transition definition*/
+  transition-property: background-color, transform;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+
+  /*shorthand for transition definition is as follows*/
+  /*transition: transition-property transition-duration transition-timing-function;*/
+  /*transition: background-color 0.4s linear;*/
+  opacity: 1;
+}
+
+/* just for some CSS transitions*/
+.box:hover{
+  cursor:pointer;
+  opacity: 0.25;
+  transform: rotate(60deg);
+  background-color: #e66465;
+}
+
+ul{
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+}
+
+li{
+  width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #AAA;
+  transition: background-color 250ms ease-in-out;
+}
+
+li:hover{
+  cursor: pointer;
+  color: #465471;
+}
+
+/* Responsive design settings */
+@media (width < 1300px) {
+  #box-wrapper{
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (width < 920px) {
+  #box-wrapper{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* This is the section where the layout changes from the desktop version to the mobile layout*/
+@media (width < 480px) {
+  .nav-wrapper{
+    min-height: 45px;
+  }
+
+  /* by default the nav-panel is to the left of the screenw */
+  .nav-panel{
+    position: absolute;
+    height: calc(100vh - 65px);
+    width: 200px;
+    top: 65px;
+    overflow-y: scroll;
+    background-color: rgba(240,240,240, 0.90);
+    color: #465471;
+    transition: transform 0.4s linear;
+    transform: translateX(-250px);
+  }
+
+  /*adding the show class will move the panel into view*/
+  .nav-panel.show{
+    transform: translateX(0);
+  }
+
+  /* important so that the menu items stack on top of each other instead of being horizontally distributed*/
+  .nav-panel ul{
+    flex-direction: column;
+  }
+
+  .nav-panel ul li{
+    width: 200px;
+  }
+
+  /*changing from display none to block reveals the hamburger menu*/
+  #menu-wrapper{
+    display: block;
+  }
+
+  /* changing to a 2 column grid in mobile layout*/
+  #box-wrapper{
+    margin-top: 60px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .nav-panel{
+    transition: unset;
+  }
+}

@@ -77,14 +77,22 @@ function loadMusic(url){
         photo.src = album.album_art;
         photo.alt = "";
 
+        let audio = document.createElement('audio');
+        audio.src = album.src;
+
         figure.append(photo);
         figure.append(caption);
+        figure.append(audio);
+
+        figure.dataset.tracks = album.tracks;
         root.append(figure);
+
 
         //adding the event handler for each figure
         figure.addEventListener("click", (event) => {
           //event.target object has information about which element triggered the event
-          console.log(event.target.src);
+          // console.log(event.target.src);
+          console.log(event.currentTarget.dataset.tracks);
         });
       }
     });
@@ -98,7 +106,19 @@ loadMusic(musicURL);
 const artURL = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number";
 getData(artURL).then((mydata) =>
 {
-  // console.log(mydata);
+  console.log(mydata);
+});
+
+
+const playBtn = document.querySelector("#play-btn");
+
+playBtn.addEventListener("click", () => {
+ let musicSample = document.querySelector("#sample-music");
+ musicSample.play();
+});
+
+playBtn.addEventListener("mouseover", () => {
+ console.log("mouseover on button");
 });
 
 
