@@ -30,4 +30,3 @@ First download the cs330 folder, either using the "Download Zip" option or runni
 ### Adding your own HTML files
 - You can add your own HTML files in the views directory
 - Edit app.js to add a route to render/serve that new HTML file
->>>>>>> 1723783bc731340d624b18ac80cce38062d3cb3e
