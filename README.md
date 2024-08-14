@@ -9,7 +9,7 @@ First download the cs330 folder, either using the "Download Zip" option or runni
 - Open Terminal on a Mac
   - Install Node: `brew install node`
   - Then go to the miniapp folder/directory and run `npm install`
-  - `npm install` read the package.json directory and installs the relevant packages
+  - `npm install` reads the package.json file and installs the relevant packages
   - Now, run `npx nodemon app.js` to run the server, and go to `http:\\localhost:3000` in a browser of your choice 
 
 ### On a Windows PC 
@@ -26,3 +26,8 @@ First download the cs330 folder, either using the "Download Zip" option or runni
 - The HTML file being served is in the "views" directory within respapp. 
 - The javascript to hide and show the nav panel is in under assets/js/interaction.js.
 - The CSS is under assets/css/style.css. Pay extra attention to the media queries near the bottom of the file.
+
+### Adding your own HTML files
+- You can add your own HTML files in the views directory
+- Edit app.js to add a route to render/serve that new HTML file
+>>>>>>> 1723783bc731340d624b18ac80cce38062d3cb3e
